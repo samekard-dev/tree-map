@@ -11,6 +11,8 @@
 		86C6BE7E2A07E949001EA1B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C6BE7D2A07E949001EA1B5 /* ContentView.swift */; };
 		86C6BE802A07E94A001EA1B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86C6BE7F2A07E94A001EA1B5 /* Assets.xcassets */; };
 		86C6BE842A07E94A001EA1B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86C6BE832A07E94A001EA1B5 /* Preview Assets.xcassets */; };
+		86C6BE8B2A07E967001EA1B5 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C6BE8A2A07E967001EA1B5 /* Layout.swift */; };
+		86C6BE8D2A07E981001EA1B5 /* PrefectureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C6BE8C2A07E981001EA1B5 /* PrefectureData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		86C6BE7F2A07E94A001EA1B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86C6BE812A07E94A001EA1B5 /* TreeMap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TreeMap.entitlements; sourceTree = "<group>"; };
 		86C6BE832A07E94A001EA1B5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		86C6BE8A2A07E967001EA1B5 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		86C6BE8C2A07E981001EA1B5 /* PrefectureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			children = (
 				86C6BE7B2A07E949001EA1B5 /* TreeMapApp.swift */,
 				86C6BE7D2A07E949001EA1B5 /* ContentView.swift */,
+				86C6BE8A2A07E967001EA1B5 /* Layout.swift */,
+				86C6BE8C2A07E981001EA1B5 /* PrefectureData.swift */,
 				86C6BE7F2A07E94A001EA1B5 /* Assets.xcassets */,
 				86C6BE812A07E94A001EA1B5 /* TreeMap.entitlements */,
 				86C6BE822A07E94A001EA1B5 /* Preview Content */,
@@ -141,6 +147,8 @@
 			files = (
 				86C6BE7E2A07E949001EA1B5 /* ContentView.swift in Sources */,
 				86C6BE7C2A07E949001EA1B5 /* TreeMapApp.swift in Sources */,
+				86C6BE8D2A07E981001EA1B5 /* PrefectureData.swift in Sources */,
+				86C6BE8B2A07E967001EA1B5 /* Layout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +270,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TreeMap/TreeMap.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TreeMap/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -284,6 +293,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sample.TreeMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -298,9 +308,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TreeMap/TreeMap.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TreeMap/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -320,6 +331,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sample.TreeMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
