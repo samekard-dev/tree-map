@@ -19,22 +19,16 @@ func calculateLayout(w: Double, h: Double, data: [Double], from: Int) -> LayoutD
         returnData.direction = .h
     }
     let mainLength = min(w, h) //個々の長方形を並べる方向がmain
-    var lastIndex = from //この値を増やしていく
-    var area = data[lastIndex] * dataToArea //グループ全体の面積（増やしていく）
+    var currentIndex = from //この値を増やしていく
+    var area = data[currentIndex] * dataToArea //グループ全体の面積（増やしていく）
     var crossLength = area / mainLength //mainに直交するのがcross
     
-    /*
-     セルが正方形に近いか調べている
-     data[lastIndex] * dataToArea / crossLength
-     と
-     crossLength
-     の比を計算している
-     */
-    var cellRatio = data[lastIndex] * dataToArea / crossLength / crossLength
+    // セルが正方形に近いか調べている
+    var cellRatio = mainLength / crossLength
     cellRatio = max(cellRatio, 1.0 / cellRatio)
     
-    while lastIndex + 1 < data.count {
-        let newIndex = lastIndex + 1
+    while currentIndex + 1 < data.count {
+        let newIndex = currentIndex + 1
         let newArea = area + data[newIndex] * dataToArea
         let newCrossLength = newArea / mainLength
         var newCellRatio = data[newIndex] * dataToArea / newCrossLength / newCrossLength
@@ -42,7 +36,7 @@ func calculateLayout(w: Double, h: Double, data: [Double], from: Int) -> LayoutD
         
         if newCellRatio < cellRatio {
             //付け足した方が正方形に近かった
-            lastIndex = newIndex
+            currentIndex = newIndex
             area = newArea
             crossLength = newCrossLength
             cellRatio = newCellRatio
@@ -53,14 +47,14 @@ func calculateLayout(w: Double, h: Double, data: [Double], from: Int) -> LayoutD
     
     switch returnData.direction {
         case .h:
-            for i in from...lastIndex {
+            for i in from...currentIndex {
                 returnData.content.append((
                     index: i, 
                     w: crossLength, 
                     h: data[i] * dataToArea / crossLength))
             }
         case .v:
-            for i in from...lastIndex {
+            for i in from...currentIndex {
                 returnData.content.append((
                     index: i, 
                     w: data[i] * dataToArea / crossLength, 
@@ -68,20 +62,20 @@ func calculateLayout(w: Double, h: Double, data: [Double], from: Int) -> LayoutD
             }
     }
     
-    if lastIndex != data.count - 1 {
+    if currentIndex != data.count - 1 {
         switch returnData.direction {
             case .h:
                 returnData.child = calculateLayout(
                     w: w - crossLength, 
                     h: h, 
                     data: data, 
-                    from: lastIndex + 1)
+                    from: currentIndex + 1)
             case .v:
                 returnData.child = calculateLayout(
                     w: w, 
                     h: h - crossLength, 
                     data: data, 
-                    from: lastIndex + 1)
+                    from: currentIndex + 1)
         }
     }
     return returnData
